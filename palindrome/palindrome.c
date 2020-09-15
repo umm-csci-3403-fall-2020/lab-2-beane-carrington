@@ -45,6 +45,7 @@ char *palindrome(char const *str) {
     answer[1] = 'o';
     answer[2] = '\0';
   }
+  free(rev);
 
   return answer;
 }

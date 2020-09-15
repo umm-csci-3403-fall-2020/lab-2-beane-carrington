@@ -3,11 +3,15 @@
 #include "palindrome.h"
 
 void is_palindrome(char const *str) {
-  ASSERT_STREQ(palindrome(str), "Yes");
+  char *stringUsed = palindrome(str); //we need this to get the correct bit size so we can properly free the correct amount of space
+  ASSERT_STREQ(stringUsed, "Yes");
+  free(stringUsed);
 }
 
 void not_palindrome(char const *str) {
-  ASSERT_STREQ(palindrome(str), "No");
+  char *stringUsed = palindrome(str);
+  ASSERT_STREQ(stringUsed, "No");
+  free(stringUsed);
 }
 
 TEST(Palindrome, HandlesEmptyString) {
