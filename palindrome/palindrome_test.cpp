@@ -9,7 +9,7 @@ void is_palindrome(char const *str) {
 }
 
 void not_palindrome(char const *str) {
-  char *stringUsed = palindrome(str);
+  char *stringUsed = palindrome(str); //again, we need to add a char * to get the correct size so we can free it.
   ASSERT_STREQ(stringUsed, "No");
   free(stringUsed);
 }

@@ -20,7 +20,12 @@ int main(int argc, char *argv[]) {
     // Without it, nothing will ever be a palindrome, unless it happens
     // to somehow start with a '\n'.
     line[strcspn(line, "\n")] = '\0';
-    printf("Is the string <%s> a palindrome? %s\n", line, palindrome(line));
+
+    //when this runs palindrome, its adding more space than what was already reserved up above, so we must add another char
+    //line to get this statements exact size so we can free this one up as well.
+    char *inputLine = palindrome(line);
+    printf("Is the string <%s> a palindrome? %s\n", line, inputLine);
+    free(inputLine);
   }
 
   free(line);
