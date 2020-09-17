@@ -15,3 +15,13 @@ bool isAVowel(char c) { //Checks the given character if its a vowel or not
     return true;
   } return false
 }
+
+int consonantsSize (char *str) { //this function counts the number of consonants so we can have the exact size of memory.
+  int c = 0;
+  int length = strlen(str);
+  for (int i = 0; i < length; i++) {
+    if (!isAVowel(str[i])){
+      c++;
+    }
+  }return c;
+}
